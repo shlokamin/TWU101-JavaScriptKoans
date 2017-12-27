@@ -27,3 +27,24 @@
 */
 
 // Write your JavaScript here
+
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+var validCurrencyNotes = [5, 10, 20, 50, 100, 500, 1000]
+
+function addMoney(currencyList) {
+    changeElementText("#currencyList", currencyList);
+	var total = 0;
+
+	for(var i = 0; i < currencyList.length; i++){
+  	var currNote = currencyList[i];
+    if(!validCurrencyNotes.includes(currNote)) break;
+    total = total + currNote;
+  }
+  changeElementText("#total", total);
+}
+
+
+

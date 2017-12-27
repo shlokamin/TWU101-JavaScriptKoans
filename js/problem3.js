@@ -39,12 +39,23 @@ function changeElementText(element, answer) {
 }
 
 function fareForRide(distanceTraveled, timeWaiting, isNight) {
-    changeElementText("#distanceTraveled", "some");
-    changeElementText("#timeWaiting", "some");
-    changeElementText("#nightOrDay", "night or day");
+    changeElementText("#distanceTraveled", distanceTraveled);
+    changeElementText("#timeWaiting", timeWaiting);
+    var nightOrDay = "";
+    if (isNight) {
+        nightOrDay = "Night"
+        } else {
+        nightOrDay = "Day"
+    }
+
+    changeElementText("#nightOrDay", nightOrDay);
     var fare = "some amount";
 
-    // write some code here!
+    fare = 20+8*(distanceTraveled-1)+4*timeWaiting;
+    console.log(distanceTraveled);
+    if (isNight) {
+     fare*=1.5;
+    }
 
     changeElementText("#fare", fare);
 }

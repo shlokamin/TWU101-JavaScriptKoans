@@ -28,7 +28,24 @@ function kiteGame(numberOfKites) {
     changeElementText("#numberOfKites", numberOfKites);
     var answer = "";
 
-    // write some code here!
+    for (var kite = 1; kite<=100 ; kite++) {
+        if (kite%3 == 0 && kite%5 == 0) {
+            answer += " Peche! Ipo Kaate!";
+        }
+
+        else if (kite%3 == 0) {
+            answer += " Peche!";
+        }
+
+        else if (kite%5 == 0) {
+            answer += " Ipo Kaate!";
+        }
+
+        else {
+            answer += "\xa0" + kite;
+        }
+
+    }
 
     changeElementText("#answer", answer);
 }

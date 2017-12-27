@@ -32,5 +32,23 @@
      zara dhyaan dein chahenge mazarat attention please
      count: 7
  */
-
 // Write your JavaScript here
+
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function reverseUrdu(news) {
+    changeElementText("#news", news);
+    var wrongOrderUrdu = news[1]
+    var correctOrderUrdu = []
+    var len = wrongOrderUrdu.length;
+
+    for (var i = 0; i<len ; i++) {
+        correctOrderUrdu[i] = wrongOrderUrdu[len-i-1]
+    }
+
+    news[1] = correctOrderUrdu;
+    changeElementText("#correctNews", news);
+    return news;
+}

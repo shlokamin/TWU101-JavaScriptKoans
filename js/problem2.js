@@ -43,7 +43,15 @@ function isTrafficJam(numberOfAutoRickshaws, isAfterEightPm) {
     changeElementText("#beforeOrAfter", "before or after");
     var answer = "maybe a";
 
-    // write some code here!
+    if(isAfterEightPm){
+        answer = "no";
+    } else if(numberOfAutoRickshaws>40) {
+        answer = "a";
+    } else {
+        answer = "no"
+    }
+
+
 
     changeElementText("#aOrNo", answer);
 }
